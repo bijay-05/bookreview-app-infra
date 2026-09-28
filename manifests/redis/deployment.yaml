@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-deployment
+  namespace: bookreview
+  labels:
+    app: redis
+    env: prod
+spec:
+  selector:
+    matchLabels:
+      app: redis
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: redis
+    spec:
+      containers:
+        - name: redis-container
+          image: REGISTRY_IMAGE_URL
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 6379

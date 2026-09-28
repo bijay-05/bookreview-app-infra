@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: database-deployment
+  namespace: bookreview
+  labels:
+    app: db
+    env: prod
+spec:
+  selector:
+    matchLabels:
+      app: db
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: db
+    spec:
+      containers:
+        - name: database-container
+          image: REGISTRY_IMAGE_URL
+          imagePullPolicy: IfNotPresent
+          envFrom:
+            - configMapRef:
+                name: db-env-cm
+          ports:
+            - containerPort: 5432

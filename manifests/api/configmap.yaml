@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: api-env-cm
+  namespace: bookreview
+data:
+  HTTP_PORT: "3001"
+  HTTP_HOST: "0.0.0.0"
+  APP_ENV: "production"
+  APP_EMAIL: "info@bookreview.com"
+  DATABASE_NAME: ""
+  DATABASE_USERNAME: ""
+  DATABASE_PASSWORD: ""
+  DATABASE_URL: "postgresql://USER:PASSWORD@database-service.bookreview.svc.cluster.local:5432/DATABASE?schema=public"
+  MAIL_USER: "xxxxxxx@gmail.com"
+  MAIL_SECRET: "xxxx yyyy zzzz xxxx"
+
+  REDIS_HOST: "redis-service.bookreview.svc.cluster.local"
+  REDIS_PORT: "6379"
+
+  MAX_REQUEST_HIT: "10"
+  MAX_REQUEST_HIT_EXPIRATION_TIME_IN_MILLI_SECONDS: "100"
+
+  PASSWORD_MAX_REQUEST_LIMIT: "5"
+
+  AUTH_JWT_ACCESS_TOKEN_SECRET_KEY: "xxxxyyy1234"
+  AUTH_JWT_ACCESS_TOKEN_EXPIRED: "1H"
+
+  EMAIL_VERIFICATION_TOKEN_EXPIRED_IN_SECONDS: "120"
+  EMAIL_VERIFICATION_TOKEN_SECRET_KEY: "xxxxyyyy1234"
+  FRONT_END_BASE_URL: "http://localhost:3000"

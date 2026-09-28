@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: book-ingress
+  namespace: bookreview
+  annotations:
+    alb.ingress.kubernetes.io/healthcheck-path: "/healthz"
+spec:
+  ingressClassName: alb
+  rules:
+    - http:
+        paths:
+          - pathType: Prefix
+            path: /api
+            backend:
+              service:
+                name: api-service
+                port:
+                  number: 3001
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: web-service
+                port:
+                  number: 80

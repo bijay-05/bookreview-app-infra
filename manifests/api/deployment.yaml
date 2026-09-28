@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-deployment
+  namespace: bookreview
+  labels:
+    app: api
+    env: prod
+spec:
+  selector:
+    matchLabels:
+      app: api
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      containers:
+        - name: api-container
+          image: book-review-app/api:gitops
+          imagePullPolicy: IfNotPresent
+          envFrom:
+            - configMapRef:
+                name: api-env-cm
+          ports:
+            - containerPort: 3001
