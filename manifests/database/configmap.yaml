@@ -4,6 +4,6 @@ metadata:
   name: db-env-cm
   namespace: bookreview
 data:
-  POSTGRES_DB: ""
-  POSTGRES_USER: ""
-  POSTGRES_PASSWORD: ""
+  POSTGRES_DB: "bookdb"
+  POSTGRES_USER: "appuser"
+  POSTGRES_PASSWORD: "appsecret123"

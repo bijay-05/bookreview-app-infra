@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: database-container
-          image: REGISTRY_IMAGE_URL
+          image: postgres:16-bookworm
           imagePullPolicy: IfNotPresent
           envFrom:
             - configMapRef:
