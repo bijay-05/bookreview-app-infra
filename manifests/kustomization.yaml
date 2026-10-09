@@ -3,21 +3,20 @@ kind: Kustomization
 
 namespace:
   bookreview
-
+  # - namespace.yaml
   # - ingress/ingress.yaml
   # - web/deployment.yaml
   # - web/service.yaml
 resources:
-  - namespace.yaml
-  - api/deployment.yaml
-  - api/service.yaml
-  - api/configmap.yaml
   - database/deployment.yaml
   - database/service.yaml
   - database/configmap.yaml
-  - ingress/test-ingress.yaml
+  - api/deployment.yaml
+  - api/service.yaml
+  - api/configmap.yaml
   - redis/deployment.yaml
   - redis/service.yaml
+  - ingress/test-ingress.yaml
 
 images:
   - name: book-review-app/api

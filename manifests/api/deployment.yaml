@@ -25,3 +25,5 @@ spec:
                 name: api-env-cm
           ports:
             - containerPort: 3001
+      imagePullSecrets:
+        - name: ecrkey
