@@ -21,7 +21,7 @@ resources:
 images:
   - name: book-review-app/api
     newName: 462035739353.dkr.ecr.ap-northeast-2.amazonaws.com/book-review-app/api
-    newTag: 363463
+    newTag: 47e658
   - name: book-review-app/web
     newName: docker.io/YOUR_DOCKERHUB_USERNAME/book-review-app/web
     newTag: v1
